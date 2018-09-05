@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 regheader">
+          Registration Form
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <form novalidate #f="ngForm" (ngSubmit)="registerForm(f)">
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="inputEmail4">Username * </label>
+                      <input type="email" class="form-control" [(ngModel)]="registerUser.email" name="email" #registeremail="ngModel" required placeholder="info@bazarcashback.com">
+
+                      <div *ngIf="registeremail.errors?.required && registeremail.touched" class="alert alert-danger">Email-id is required</div> 
+                  </div>
+
+                  <div class="form-group col-md-6">
+                      <label for="inputPassword4">Password *</label>
+                      <input type="password" class="form-control" [(ngModel)]="registerUser.password" name="password" #registerpassword="ngModel" required placeholder="Password">
+
+                      <div *ngIf="registerpassword.errors?.required && registerpassword.touched" class="alert alert-danger">Email-id is required</div>
+                  </div>                   
+
+              </div>
+              <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" [(ngModel)]="registerUser.address" name="address" #registeraddress="ngModel" placeholder="1234 Main St">
+              </div>
+              <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="inputCity">City *</label>
+                      <input type="text" class="form-control" [(ngModel)]="registerUser.city" name="city" #registercity="ngModel" required>
+
+                      <div *ngIf="registercity.errors?.required && registercity.touched" class="alert alert-danger">Email-id is required</div>
+
+                  </div>
+
+                  <div class="form-group col-md-4">
+                      <label for="inputState">State</label>
+                      <select name="state" class="form-control" [(ngModel)]="registerUser.state">                                                      
+                          <option *ngFor="let state of allstate" [ngValue]= "state" >{{ state}}</option>
+                      </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                      <label for="inputZip">Zip</label>
+                      <input type="text" class="form-control" [(ngModel)]="registerUser.zip" name="zip" #registerzip="ngModel">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" [(ngModel)]="registerUser.checkmeout" name="checkmeout" #registercheckmeout="ngModel">
+                      <label class="form-check-label" for="gridCheck">
+                          Check me out
+                      </label>
+                  </div>
+              </div>
+            
+              <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Register Now</button>
+
+          </form>
+      </div>
+  </div>
+</div>

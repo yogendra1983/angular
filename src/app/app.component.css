@@ -1,0 +1,25 @@
+.nav-link{
+    padding-left: 4px;
+    color: rgba(255,255,255,.5);
+}
+
+#navbarNavDropdown .nav-item{
+    padding-left: 20px;
+}
+.logo{
+    line-height: 50px;
+    color: beige;
+    font-size: 25px;
+    font-weight: bold
+}
+
+.justify-content-end{
+    color: beige;
+}
+
+#bg-dark {
+    height: 50px;
+    color: white;
+    line-height: 280%;
+    background-color: #343a40!important;
+ }
